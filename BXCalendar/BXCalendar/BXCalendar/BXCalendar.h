@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+typedef void(^Cancel)(NSString *dateStr);
 typedef void(^Sure)(NSString *dateStr);
 
 @interface BXCalendar : UIView
 
 
 
-- (instancetype)initWithFrame:(CGRect)frame Sure:(Sure)sure;
+- (instancetype)initWithFrame:(CGRect)frame Cancel:(Cancel)cancel Sure:(Sure)sure;
 
 @end

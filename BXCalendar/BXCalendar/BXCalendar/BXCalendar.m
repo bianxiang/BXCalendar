@@ -15,6 +15,7 @@
     NSDate *_dateSelected;
     
     Sure _sure;
+    Cancel _cancel;
 }
 @property (strong, nonatomic)  JTCalendarMenuView *calendarMenuView;
 @property (strong, nonatomic)  JTCalendarWeekDayView *weekDayView;
@@ -25,10 +26,10 @@
 
 @implementation BXCalendar
 
-- (instancetype)initWithFrame:(CGRect)frame  Sure:(Sure)sure{
+- (instancetype)initWithFrame:(CGRect)frame Cancel:(Cancel)cancel Sure:(Sure)sure{
     if (self = [super initWithFrame:frame]) {
         _sure = sure;
-        
+        _cancel = cancel;
         [self addSubviewsWithFrame:frame];
         [self setupBXCalendar];
     }
@@ -59,7 +60,7 @@
     sureBtn.titleLabel.font = [UIFont systemFontOfSize:15.0f];
     [sureBtn addTarget:self action:@selector(sure) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:sureBtn];
-
+    
 }
 
 - (void)setupBXCalendar {
@@ -144,7 +145,7 @@
             NSLog(@"-----%@",dayView.textLabel.text);
             
         }
-//        _previousDayView = dayView;
+        //        _previousDayView = dayView;
         
         
     }
@@ -163,8 +164,8 @@
     
     
     
-//    _previousDayView.circleView.hidden = YES;
-//    _previousDayView.circleView.backgroundColor = [UIColor clearColor];
+    //    _previousDayView.circleView.hidden = YES;
+    //    _previousDayView.circleView.backgroundColor = [UIColor clearColor];
     _dateSelected = dayView.date;
     NSLog(@"%@",_dateSelected);
     // Animation for the circleView
@@ -244,11 +245,12 @@
 
 - (void)cancel {
     NSLog(@"取消");
+    _cancel([[self dateFormatter] stringFromDate:_dateSelected]);
 }
 
 - (void)sure {
     NSLog(@"确定");
-//    NSLog(@"%@",[[self dateFormatter] stringFromDate:_dateSelected]);
+    //    NSLog(@"%@",[[self dateFormatter] stringFromDate:_dateSelected]);
     _sure([[self dateFormatter] stringFromDate:_dateSelected]);
 }
 @end
