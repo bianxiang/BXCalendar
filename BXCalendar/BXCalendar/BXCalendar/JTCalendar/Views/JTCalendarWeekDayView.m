@@ -47,7 +47,7 @@
         [dayViews addObject:label];
         
         label.textAlignment = NSTextAlignmentCenter;
-        
+#warning 我改的
         //我改的
         label.textColor = [UIColor blackColor];
         label.font = [UIFont systemFontOfSize:11];

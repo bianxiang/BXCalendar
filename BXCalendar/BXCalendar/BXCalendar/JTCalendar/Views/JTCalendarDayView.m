@@ -120,8 +120,12 @@
         [dateFormatter setDateFormat:@"dd"];
     }
     
+#warning 我改的
     _textLabel.text = [dateFormatter stringFromDate:_date];
-        
+    if ([_textLabel.text hasPrefix:@"0"]) {
+        _textLabel.text = [_textLabel.text substringFromIndex:1];
+    }
+    
     [_manager.delegateManager prepareDayView:self];
 }
 

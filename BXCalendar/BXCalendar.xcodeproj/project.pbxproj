@@ -130,9 +130,9 @@
 		89F211851CA2CC610006F791 /* BXCalendar */ = {
 			isa = PBXGroup;
 			children = (
-				89F211861CA2CC610006F791 /* JTCalendar */,
 				89F211B61CA2CC830006F791 /* BXCalendar.h */,
 				89F211B71CA2CC830006F791 /* BXCalendar.m */,
+				89F211861CA2CC610006F791 /* JTCalendar */,
 			);
 			path = BXCalendar;
 			sourceTree = "<group>";
@@ -434,6 +434,7 @@
 				89F211541CA2CACF0006F791 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
